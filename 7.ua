@@ -26,5 +26,5 @@ B ← Equations‼⨬(+|×|⋕ ˜⊂ ∩°⋕) 3
   ⍤. =11387
 └─╴
 
-B Parse &fras "inputs/7i.txt"
 A Parse &fras "inputs/7i.txt"
+B Parse &fras "inputs/7i.txt"

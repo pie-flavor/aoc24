@@ -16,17 +16,15 @@ B ← (
     | ⊢⍉⊚⌕¯1_W ⋅∘ # get the locations of all free blocks
     )
     ◡(⊚ ≡⌟₂(↧⊃>(≤ ∩⌟(⊣⊡))):) # get the locations of free blocks that can contain the file
-
-    ⍣(⍩(
-        ⊃(⊡⊙⋅∘|⋅⊙◌)              # convert free block ID to location
-        ⤙˜- ◡∩⌟(⊣⊡)              # get remaining size of free block after inserting file
-        ⊟ ⊙(⊟¯1) ⊟ ⊃(⊢⊡◌◌◌)⊙⊙⊙⊙∘ # split free block into file and new smaller free block
-        ⊃⋅⋅⊙◌(⍜⊏(⋅∘) ⊃(⋅⊙⋅∘|∘))  # replace the old free block in the filesystem
-        ⍜⊡⋅[¯1] ¤˜⊟0 +₁          # mark old file as free
-        ⍜⊜□⍚(¤⍜⊢⋅¯1/+) ⊢⍉ ⊸⌕¯1_W # collapse adjacent free blocks
-      )⊢
-    | ◌◌◌
-    )
+    =0⊸⧻
+    ⨬(
+      ⊃(⊡⊙⋅∘|⋅⊙◌) ⊢            # convert free block ID to location
+      ⤙˜- ◡∩⌟(⊣⊡)              # get remaining size of free block after inserting file
+      ⊟ ⊙(⊟¯1) ⊟ ⊃(⊢⊡◌◌◌)⊙⊙⊙⊙∘ # split free block into file and new smaller free block
+      ⊃⋅⋅⊙◌(⍜⊏(⋅∘) ⊃(⋅⊙⋅∘|∘))  # replace the old free block in the filesystem
+      ⍜⊡⋅[¯1] ¤˜⊟0 +₁          # mark old file as free
+      ⍜⊜□⍚(¤⍜⊢⋅¯1/+) ⊢⍉ ⊸⌕¯1_W # collapse adjacent free blocks
+    )⋅⋅◌
   )
   /+ ▽⊸≥₀ ×°⊏ ˜▽°⊟⍉
 )
